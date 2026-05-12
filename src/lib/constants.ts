@@ -9,14 +9,10 @@ export const SITE = {
 };
 
 /**
- * Custom logo file. Set to '/logo/logo.svg' (or .png) once you have placed
- * your logo file in public/logo/. While `null`, the site uses the built-in
- * SVG fiber mark.
- *
- * Example:
- *   export const BRAND_LOGO_SRC: string | null = '/logo/logo.svg';
+ * Custom logo file. Set to a path under /public to override the built-in
+ * SVG fiber mark. Leave as null to fall back to the default mark.
  */
-export const BRAND_LOGO_SRC: string | null = null;
+export const BRAND_LOGO_SRC: string | null = '/logo/logo_iit.png';
 
 export const NAV_LINKS = [
   { href: '/', key: 'home' as const },

@@ -9,6 +9,26 @@ export function Logo({
   className?: string;
   variant?: 'dark' | 'light';
 }) {
+  // When a brand logo file is provided, render it on its own — most logo
+  // files already contain the wordmark. If you want the text beside the
+  // image instead, switch to the `BuiltInMark` branch below.
+  if (BRAND_LOGO_SRC) {
+    return (
+      <Link
+        href="/"
+        className={cn('inline-flex items-center', className)}
+        aria-label={SITE.name}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={BRAND_LOGO_SRC}
+          alt={SITE.name}
+          className="h-10 w-auto sm:h-11"
+        />
+      </Link>
+    );
+  }
+
   return (
     <Link
       href="/"
@@ -19,16 +39,7 @@ export function Logo({
       )}
       aria-label={SITE.name}
     >
-      {BRAND_LOGO_SRC ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={BRAND_LOGO_SRC}
-          alt={SITE.name}
-          className="h-9 w-auto"
-        />
-      ) : (
-        <BuiltInMark />
-      )}
+      <BuiltInMark />
       <span className="flex flex-col leading-tight">
         <span className="text-base font-semibold sm:text-lg">
           {SITE.short}

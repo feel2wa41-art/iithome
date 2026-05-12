@@ -1,25 +1,15 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { useTranslations, useLocale } from 'next-intl';
 import { Section, SectionHeader } from '@/components/ui/Section';
 import { Eyebrow } from '@/components/ui/Badge';
 import { LinkButton } from '@/components/ui/Button';
-import { PRODUCT_CATEGORIES } from '@/lib/constants';
-import { ArrowUpRight, Cable, Network, Wrench, Cpu, Plug } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-
-const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  cable: Cable,
-  ftth: Network,
-  splice: Wrench,
-  active: Cpu,
-  accessory: Plug,
-};
+import { getCatalogue } from '@/lib/products';
 
 export function ProductsPreview() {
   const t = useTranslations('home.products');
-  const tCat = useTranslations('products.categories');
+  const locale = useLocale() as 'en' | 'id';
+  const categories = getCatalogue();
 
   return (
     <Section>
@@ -37,63 +27,55 @@ export function ProductsPreview() {
           </LinkButton>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {PRODUCT_CATEGORIES.map((cat, i) => {
-            const Icon = ICONS[cat.key];
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          {categories.map((cat) => {
+            const sample = cat.products.slice(0, 4);
             return (
-              <motion.div
+              <Link
                 key={cat.slug}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.45, delay: i * 0.05 }}
+                href="/products"
+                className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_30px_80px_-25px_rgba(25,98,245,0.25)]"
               >
-                <Link
-                  href="/products"
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_20px_60px_-20px_rgba(25,98,245,0.25)]"
-                >
-                  {/* Image slot — auto-loads /products/{slug}.jpg if present,
-                      otherwise shows the gradient + icon background */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-brand-50 to-accent-400/10">
-                    <CategoryImage slug={cat.slug} alt={tCat(cat.key)} />
-                    <Icon className="absolute right-4 top-4 h-7 w-7 text-brand-600/70 transition group-hover:scale-110 group-hover:text-brand-600" />
-                  </div>
-                  <div className="flex flex-1 flex-col justify-between p-5">
-                    <p className="text-base font-semibold text-ink-900">
-                      {tCat(cat.key)}
-                    </p>
-                    <div className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-slate-500 transition-colors group-hover:text-brand-600">
-                      <span>View</span>
-                      <ArrowUpRight className="h-3.5 w-3.5" />
+                <div className="grid grid-cols-2 gap-px bg-slate-100 sm:grid-cols-4">
+                  {sample.map((p) => (
+                    <div
+                      key={p.slug}
+                      className="aspect-square overflow-hidden bg-white"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      />
                     </div>
+                  ))}
+                  {sample.length === 0 && (
+                    <div className="col-span-full flex aspect-[4/1] items-center justify-center bg-gradient-to-br from-brand-50 to-accent-400/10 text-sm text-slate-500">
+                      No products yet
+                    </div>
+                  )}
+                </div>
+                <div className="flex items-end justify-between p-6 sm:p-7">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
+                      {cat.products.length} {locale === 'id' ? 'produk' : 'products'}
+                    </p>
+                    <h3 className="mt-1.5 text-xl font-semibold text-ink-900 sm:text-2xl">
+                      {cat.label[locale]}
+                    </h3>
+                    <p className="mt-2 max-w-md text-sm leading-relaxed text-slate-600">
+                      {cat.description[locale]}
+                    </p>
                   </div>
-                </Link>
-              </motion.div>
+                  <ArrowUpRight className="h-5 w-5 shrink-0 text-slate-400 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-brand-600" />
+                </div>
+              </Link>
             );
           })}
         </div>
       </div>
     </Section>
-  );
-}
-
-/**
- * Renders <img> for /products/{slug}.jpg. The natural `onError` swap to a
- * transparent pixel means missing files don't break the layout — the gradient
- * background still shows through.
- */
-function CategoryImage({ slug, alt }: { slug: string; alt: string }) {
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={`/products/${slug}.jpg`}
-      alt={alt}
-      loading="lazy"
-      className="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-500 [&.loaded]:opacity-100"
-      onLoad={(e) => e.currentTarget.classList.add('loaded')}
-      onError={(e) => {
-        e.currentTarget.style.display = 'none';
-      }}
-    />
   );
 }
