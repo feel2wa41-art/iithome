@@ -1,18 +1,18 @@
 import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
-import { BRAND_LOGO_SRC, SITE } from '@/lib/constants';
+import { SITE } from '@/lib/constants';
 
 export function Logo({
   className,
   variant = 'dark',
+  src,
 }: {
   className?: string;
   variant?: 'dark' | 'light';
+  /** Optional logo image override. When null/undefined, the built-in SVG mark is used. */
+  src?: string | null;
 }) {
-  // When a brand logo file is provided, render it on its own — most logo
-  // files already contain the wordmark. If you want the text beside the
-  // image instead, switch to the `BuiltInMark` branch below.
-  if (BRAND_LOGO_SRC) {
+  if (src) {
     return (
       <Link
         href="/"
@@ -21,7 +21,7 @@ export function Logo({
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={BRAND_LOGO_SRC}
+          src={src}
           alt={SITE.name}
           className="h-10 w-auto sm:h-11"
         />

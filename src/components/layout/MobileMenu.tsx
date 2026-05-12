@@ -13,9 +13,11 @@ import { LinkButton } from '@/components/ui/Button';
 export function MobileMenu({
   open,
   onClose,
+  logoSrc,
 }: {
   open: boolean;
   onClose: () => void;
+  logoSrc?: string | null;
 }) {
   const t = useTranslations('nav');
   const tCta = useTranslations('cta');
@@ -54,7 +56,7 @@ export function MobileMenu({
         )}
       >
         <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
-          <Logo />
+          <Logo src={logoSrc} />
           <button
             onClick={onClose}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-ink-900 hover:bg-slate-50"

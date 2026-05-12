@@ -1,32 +1,28 @@
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Section, SectionHeader } from '@/components/ui/Section';
 import { Eyebrow } from '@/components/ui/Badge';
 import { LinkButton } from '@/components/ui/Button';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ImageOff } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { getCatalogue } from '@/lib/products';
+import { getCatalogueView } from '@/lib/catalogue';
+import type { Locale } from '@/types';
 
-export function ProductsPreview() {
-  const t = useTranslations('home.products');
-  const locale = useLocale() as 'en' | 'id';
-  const categories = getCatalogue();
+export async function ProductsPreview({ locale }: { locale: Locale }) {
+  const categories = await getCatalogueView();
+  return <ProductsPreviewView categories={categories} locale={locale} />;
+}
 
+function ProductsPreviewView({
+  categories,
+  locale,
+}: {
+  categories: Awaited<ReturnType<typeof getCatalogueView>>;
+  locale: Locale;
+}) {
   return (
     <Section>
       <div className="container-x">
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <SectionHeader
-            className="mb-0"
-            eyebrow={<Eyebrow>{t('eyebrow')}</Eyebrow>}
-            title={t('title')}
-            subtitle={t('subtitle')}
-          />
-          <LinkButton href="/products" variant="ghost" size="md">
-            {t('viewAll')}
-            <ArrowUpRight className="h-4 w-4" />
-          </LinkButton>
-        </div>
-
+        <Header />
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {categories.map((cat) => {
             const sample = cat.products.slice(0, 4);
@@ -42,13 +38,19 @@ export function ProductsPreview() {
                       key={p.slug}
                       className="aspect-square overflow-hidden bg-white"
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={p.image}
-                        alt={p.name}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                      />
+                      {p.image ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={p.image}
+                          alt={p.name[locale]}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center text-slate-300">
+                          <ImageOff className="h-6 w-6" />
+                        </div>
+                      )}
                     </div>
                   ))}
                   {sample.length === 0 && (
@@ -60,7 +62,8 @@ export function ProductsPreview() {
                 <div className="flex items-end justify-between p-6 sm:p-7">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
-                      {cat.products.length} {locale === 'id' ? 'produk' : 'products'}
+                      {cat.products.length}{' '}
+                      {locale === 'id' ? 'produk' : 'products'}
                     </p>
                     <h3 className="mt-1.5 text-xl font-semibold text-ink-900 sm:text-2xl">
                       {cat.label[locale]}
@@ -77,5 +80,23 @@ export function ProductsPreview() {
         </div>
       </div>
     </Section>
+  );
+}
+
+function Header() {
+  const t = useTranslations('home.products');
+  return (
+    <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+      <SectionHeader
+        className="mb-0"
+        eyebrow={<Eyebrow>{t('eyebrow')}</Eyebrow>}
+        title={t('title')}
+        subtitle={t('subtitle')}
+      />
+      <LinkButton href="/products" variant="ghost" size="md">
+        {t('viewAll')}
+        <ArrowUpRight className="h-4 w-4" />
+      </LinkButton>
+    </div>
   );
 }

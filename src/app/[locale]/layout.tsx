@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { AdminFab } from '@/components/layout/AdminFab';
+import { getSiteSettings } from '@/lib/site-settings';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
@@ -56,11 +57,14 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const [messages, settings] = await Promise.all([
+    getMessages(),
+    getSiteSettings(),
+  ]);
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <Header />
+      <Header logoSrc={settings.logoUrl} />
       <main className="min-h-[60vh]">{children}</main>
       <Footer />
       <AdminFab />

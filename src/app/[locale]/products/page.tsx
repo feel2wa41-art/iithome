@@ -1,8 +1,8 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Eyebrow } from '@/components/ui/Badge';
 import { LinkButton } from '@/components/ui/Button';
-import { getCatalogue } from '@/lib/products';
-import { MessageSquare } from 'lucide-react';
+import { getCatalogueView } from '@/lib/catalogue';
+import { MessageSquare, ImageOff } from 'lucide-react';
 import type { Locale } from '@/types';
 
 export default async function ProductsPage({
@@ -14,7 +14,7 @@ export default async function ProductsPage({
   setRequestLocale(locale);
   const t = await getTranslations('products');
   const tCta = await getTranslations('cta');
-  const categories = getCatalogue();
+  const categories = await getCatalogueView();
   const lang = (locale as Locale) ?? 'en';
 
   const totalProducts = categories.reduce((s, c) => s + c.products.length, 0);
@@ -30,7 +30,10 @@ export default async function ProductsPage({
           <p className="mt-6 text-lg text-slate-600">{t('subtitle')}</p>
           {totalProducts > 0 && (
             <p className="mt-4 text-sm font-medium uppercase tracking-[0.14em] text-slate-400">
-              {totalProducts} {lang === 'id' ? 'produk dalam katalog' : 'products in catalogue'}
+              {totalProducts}{' '}
+              {lang === 'id'
+                ? 'produk dalam katalog'
+                : 'products in catalogue'}
             </p>
           )}
         </div>
@@ -53,18 +56,17 @@ export default async function ProductsPage({
           <div className="space-y-20">
             {categories.map((cat) => (
               <div key={cat.slug} id={cat.slug} className="scroll-mt-24">
-                <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
-                      {cat.products.length} {lang === 'id' ? 'produk' : 'products'}
-                    </p>
-                    <h2 className="mt-1 text-2xl font-semibold text-ink-900 sm:text-3xl">
-                      {cat.label[lang]}
-                    </h2>
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
-                      {cat.description[lang]}
-                    </p>
-                  </div>
+                <div className="mb-8">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
+                    {cat.products.length}{' '}
+                    {lang === 'id' ? 'produk' : 'products'}
+                  </p>
+                  <h2 className="mt-1 text-2xl font-semibold text-ink-900 sm:text-3xl">
+                    {cat.label[lang]}
+                  </h2>
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
+                    {cat.description[lang]}
+                  </p>
                 </div>
 
                 {cat.products.length === 0 ? (
@@ -79,20 +81,33 @@ export default async function ProductsPage({
                         className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_20px_60px_-20px_rgba(25,98,245,0.25)]"
                       >
                         <div className="relative aspect-square overflow-hidden bg-slate-50">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={p.image}
-                            alt={p.name}
-                            loading="lazy"
-                            className="h-full w-full object-contain p-4 transition duration-500 group-hover:scale-105"
-                          />
+                          {p.image ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={p.image}
+                              alt={p.name[lang]}
+                              loading="lazy"
+                              className="h-full w-full object-contain p-4 transition duration-500 group-hover:scale-105"
+                            />
+                          ) : (
+                            <div className="flex h-full w-full items-center justify-center text-slate-300">
+                              <ImageOff className="h-10 w-10" />
+                            </div>
+                          )}
                         </div>
                         <div className="flex flex-1 flex-col justify-between p-4">
-                          <h3 className="text-sm font-semibold leading-snug text-ink-900">
-                            {p.name}
-                          </h3>
+                          <div>
+                            <h3 className="text-sm font-semibold leading-snug text-ink-900">
+                              {p.name[lang]}
+                            </h3>
+                            {p.short[lang] && (
+                              <p className="mt-1.5 text-xs leading-relaxed text-slate-600 line-clamp-2">
+                                {p.short[lang]}
+                              </p>
+                            )}
+                          </div>
                           <a
-                            href={`/${locale}/contact?product=${encodeURIComponent(p.name)}`}
+                            href={`/${locale}/contact?product=${encodeURIComponent(p.name[lang])}`}
                             className="mt-3 inline-flex items-center text-xs font-medium text-brand-600 hover:text-brand-700"
                           >
                             {t('inquire')} →

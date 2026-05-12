@@ -11,7 +11,7 @@ import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { LinkButton } from '@/components/ui/Button';
 
-export function Header() {
+export function Header({ logoSrc }: { logoSrc?: string | null }) {
   const t = useTranslations('nav');
   const tCta = useTranslations('cta');
   const pathname = usePathname();
@@ -38,7 +38,7 @@ export function Header() {
         )}
       >
         <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-20">
-          <Logo />
+          <Logo src={logoSrc} />
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV_LINKS.map((link) => {
               const isActive =
@@ -84,7 +84,7 @@ export function Header() {
           </div>
         </div>
       </header>
-      <MobileMenu open={open} onClose={() => setOpen(false)} />
+      <MobileMenu open={open} onClose={() => setOpen(false)} logoSrc={logoSrc} />
     </>
   );
 }

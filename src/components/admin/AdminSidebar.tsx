@@ -5,9 +5,10 @@ import { cn } from '@/lib/utils';
 import {
   LayoutDashboard,
   Boxes,
+  Layers,
   Mail,
   Briefcase,
-  FileText,
+  Settings,
   LogOut,
 } from 'lucide-react';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
@@ -15,10 +16,11 @@ import { useRouter } from '@/i18n/navigation';
 
 const ITEMS = [
   { href: '/admin', icon: LayoutDashboard, label: 'Dashboard' },
+  { href: '/admin/categories', icon: Layers, label: 'Categories' },
   { href: '/admin/products', icon: Boxes, label: 'Products' },
   { href: '/admin/inquiries', icon: Mail, label: 'Inquiries' },
   { href: '/admin/careers', icon: Briefcase, label: 'Careers' },
-  { href: '/admin/content', icon: FileText, label: 'Content' },
+  { href: '/admin/settings', icon: Settings, label: 'Settings' },
 ];
 
 export function AdminSidebar() {

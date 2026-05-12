@@ -6,6 +6,7 @@ import { ProductsPreview } from '@/components/home/ProductsPreview';
 import { WhyUs } from '@/components/home/WhyUs';
 import { OurClients } from '@/components/home/OurClients';
 import { CTA } from '@/components/home/CTA';
+import type { Locale } from '@/types';
 
 export default async function HomePage({
   params,
@@ -20,7 +21,7 @@ export default async function HomePage({
       <Hero />
       <Stats />
       <Services />
-      <ProductsPreview />
+      <ProductsPreview locale={locale as Locale} />
       <WhyUs />
       <OurClients />
       <CTA />
