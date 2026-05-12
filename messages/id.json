@@ -1,0 +1,202 @@
+{
+  "brand": {
+    "name": "PT International Information Technology",
+    "short": "IIT",
+    "tagline": "Menghubungkan Indonesia, serat demi serat."
+  },
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "products": "Produk",
+    "contact": "Kontak",
+    "careers": "Karier",
+    "admin": "Admin",
+    "menu": "Menu",
+    "close": "Tutup"
+  },
+  "cta": {
+    "getInTouch": "Hubungi kami",
+    "viewProducts": "Lihat produk",
+    "requestQuote": "Minta penawaran",
+    "learnMore": "Selengkapnya",
+    "joinUs": "Gabung tim kami"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Fiber Optic · FTTH · Solusi Telekomunikasi",
+      "title": "Infrastruktur konektivitas terpercaya untuk era digital Indonesia.",
+      "subtitle": "PT International Information Technology menghadirkan jaringan fiber-optic premium, deployment FTTH, dan solusi telekomunikasi menyeluruh — didukung tim teknis berpengalaman dan layanan purna jual yang responsif.",
+      "primary": "Mulai proyek",
+      "secondary": "Lihat produk"
+    },
+    "stats": {
+      "since": "Berdiri sejak 2023",
+      "projects": "Proyek diselesaikan",
+      "uptime": "Uptime jaringan",
+      "partners": "Mitra terpercaya"
+    },
+    "services": {
+      "eyebrow": "Layanan kami",
+      "title": "Solusi jaringan & infrastruktur menyeluruh",
+      "subtitle": "Dari desain hingga instalasi dan dukungan jangka panjang — berbasis material premium dan standar industri.",
+      "items": {
+        "fiber": {
+          "title": "Fiber Optic & FTTH",
+          "desc": "Backbone, distribusi, dan last-mile untuk perumahan, gedung komersial, dan jaringan ISP."
+        },
+        "telecom": {
+          "title": "Solusi Telekomunikasi",
+          "desc": "Survei lokasi, integrasi, dan turnkey delivery untuk operator telekomunikasi dan enterprise."
+        },
+        "supply": {
+          "title": "Kabel, Aksesori & Perangkat",
+          "desc": "Produk fiber sesuai standar, peralatan splice, dan perangkat aktif disuplai sesuai spesifikasi."
+        },
+        "trade": {
+          "title": "Impor / Ekspor & Konsultasi",
+          "desc": "Fasilitasi perdagangan, sourcing, dan konsultasi infrastruktur untuk pasar Indonesia."
+        }
+      }
+    },
+    "why": {
+      "eyebrow": "Kenapa kami",
+      "title": "Kualitas yang bisa diandalkan untuk jaringan Anda.",
+      "items": {
+        "premium": {
+          "title": "Material premium",
+          "desc": "Produk fiber dan aksesori sesuai standar — tanpa kompromi di lapisan fisik."
+        },
+        "team": {
+          "title": "Engineer berpengalaman",
+          "desc": "Teknisi terbukti di lapangan, mengerjakan dengan standar profesional dan tepat waktu."
+        },
+        "support": {
+          "title": "Dukungan responsif",
+          "desc": "Komunikasi jelas, dukungan teknis proaktif, dan layanan purna jual yang dapat diandalkan."
+        },
+        "scale": {
+          "title": "Siap berkembang",
+          "desc": "Dari satu gedung hingga rollout nasional, kami rencanakan kapasitas yang tumbuh bersama Anda."
+        }
+      }
+    },
+    "products": {
+      "eyebrow": "Produk",
+      "title": "Produk fiber dan jaringan kualitas premium",
+      "subtitle": "Lihat katalog kabel, konektivitas, splice, dan perangkat aktif kami.",
+      "viewAll": "Lihat semua produk"
+    },
+    "cta": {
+      "title": "Siap membangun jaringan Anda?",
+      "subtitle": "Ceritakan proyek Anda — tim engineering kami akan membalas dalam 1 hari kerja.",
+      "primary": "Hubungi kami",
+      "secondary": "Lihat kapabilitas"
+    }
+  },
+  "about": {
+    "eyebrow": "Tentang kami",
+    "title": "Mitra terpercaya Indonesia untuk fiber dan konektivitas.",
+    "lead": "PT International Information Technology adalah perusahaan yang berdiri tahun 2023, bergerak di bidang Fiber Optic, FTTH, dan Solusi Telekomunikasi.",
+    "body1": "Kami hadir untuk memenuhi kebutuhan infrastruktur jaringan yang terus tumbuh di era digital — melayani area perumahan, gedung perkantoran, sektor industri, dan penyedia layanan internet.",
+    "body2": "Sebagai penyedia solusi jaringan, kami berkomitmen menghadirkan layanan berkualitas tinggi dan dapat diandalkan. Dengan mengutamakan material premium dan dukungan tim teknis berpengalaman, setiap proyek dikerjakan dengan standar profesional dan tepat waktu.",
+    "body3": "Kekuatan utama kami terletak pada kualitas pekerjaan dan layanan pelanggan yang responsif. Kepuasan klien adalah fondasi pertumbuhan kami — itulah mengapa kami selalu memprioritaskan komunikasi yang jelas, solusi yang efektif, dukungan teknis proaktif, dan layanan purna jual yang andal.",
+    "vision": {
+      "title": "Visi kami",
+      "text": "Menjadi salah satu perusahaan terdepan dalam penyediaan infrastruktur fiber optic dan telekomunikasi di Indonesia — menghadirkan konektivitas yang cepat, stabil, dan efisien."
+    },
+    "mission": {
+      "title": "Misi kami",
+      "items": [
+        "Menghadirkan infrastruktur fiber dan telekomunikasi yang andal dan sesuai standar.",
+        "Memberdayakan klien dengan dukungan teknis yang responsif dan transparan.",
+        "Menjembatani perdagangan internasional dan eksekusi lokal di Indonesia."
+      ]
+    },
+    "values": {
+      "title": "Nilai-nilai kami",
+      "items": {
+        "quality": {
+          "title": "Kualitas utama",
+          "desc": "Material premium, eksekusi profesional, hasil yang terukur."
+        },
+        "trust": {
+          "title": "Kepercayaan jangka panjang",
+          "desc": "Layanan purna jual yang memperlakukan setiap klien sebagai mitra jangka panjang."
+        },
+        "innovation": {
+          "title": "Inovasi berkelanjutan",
+          "desc": "Beradaptasi dengan teknologi baru dan kebutuhan pasar yang dinamis."
+        }
+      }
+    }
+  },
+  "products": {
+    "eyebrow": "Produk",
+    "title": "Fiber, konektivitas, dan perangkat jaringan",
+    "subtitle": "Setiap produk dipilih untuk kepatuhan terhadap standar industri dan kehandalan di lapangan.",
+    "categories": {
+      "cable": "Kabel Fiber",
+      "ftth": "Perangkat FTTH",
+      "splice": "Splice & Peralatan",
+      "active": "Perangkat Aktif",
+      "accessory": "Aksesori"
+    },
+    "viewDetails": "Detail produk",
+    "inquire": "Tanya",
+    "comingSoon": "Katalog segera hadir — hubungi kami untuk penawaran khusus."
+  },
+  "contact": {
+    "eyebrow": "Kontak",
+    "title": "Mari rencanakan deployment berikutnya.",
+    "subtitle": "Kirim pesan dan engineer kami akan merespons dalam 1 hari kerja.",
+    "info": {
+      "office": "Kantor",
+      "officeAddress": "Jakarta, Indonesia",
+      "email": "Email",
+      "emailValue": "contact@iit.co.id",
+      "phone": "Telepon",
+      "phoneValue": "+62 21 0000 0000",
+      "hours": "Jam kerja",
+      "hoursValue": "Sen – Jum · 09:00 – 18:00 WIB"
+    },
+    "form": {
+      "name": "Nama lengkap",
+      "email": "Alamat email",
+      "phone": "Telepon (opsional)",
+      "company": "Perusahaan (opsional)",
+      "subject": "Subjek",
+      "message": "Ceritakan tentang proyek Anda",
+      "submit": "Kirim pesan",
+      "submitting": "Mengirim…",
+      "success": "Terima kasih — pesan Anda telah kami terima. Tim kami akan segera menghubungi.",
+      "error": "Terjadi kesalahan. Silakan coba lagi atau email kami langsung."
+    }
+  },
+  "careers": {
+    "eyebrow": "Karier",
+    "title": "Bangun konektivitas Indonesia bersama kami.",
+    "subtitle": "Kami mencari engineer, teknisi, dan spesialis perdagangan yang peduli kualitas.",
+    "open": "Posisi terbuka",
+    "noOpenings": "Saat ini belum ada posisi terbuka — kami tetap senang menerima profil Anda.",
+    "apply": "Lamar",
+    "form": {
+      "title": "Lamaran untuk {position}",
+      "name": "Nama lengkap",
+      "email": "Email",
+      "phone": "Telepon",
+      "resume": "Tautan Resume / CV",
+      "cover": "Kenapa Anda cocok?",
+      "submit": "Kirim lamaran",
+      "success": "Lamaran diterima — terima kasih!",
+      "error": "Terjadi kesalahan. Silakan coba lagi."
+    }
+  },
+  "footer": {
+    "rights": "Seluruh hak cipta dilindungi.",
+    "company": "Perusahaan",
+    "explore": "Jelajahi",
+    "legal": "Legal",
+    "privacy": "Privasi",
+    "terms": "Ketentuan"
+  }
+}

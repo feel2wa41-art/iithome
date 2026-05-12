@@ -1,0 +1,202 @@
+{
+  "brand": {
+    "name": "PT International Information Technology",
+    "short": "IIT",
+    "tagline": "Connecting Indonesia, fiber by fiber."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact",
+    "careers": "Careers",
+    "admin": "Admin",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "cta": {
+    "getInTouch": "Get in touch",
+    "viewProducts": "Explore products",
+    "requestQuote": "Request a quote",
+    "learnMore": "Learn more",
+    "joinUs": "Join our team"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Fiber Optic · FTTH · Telecommunication",
+      "title": "Reliable connectivity infrastructure built for Indonesia's digital era.",
+      "subtitle": "PT International Information Technology delivers premium fiber-optic networks, FTTH deployments and end-to-end telecom solutions — backed by an experienced technical team and responsive after-sales service.",
+      "primary": "Start a project",
+      "secondary": "Browse products"
+    },
+    "stats": {
+      "since": "Established 2023",
+      "projects": "Projects delivered",
+      "uptime": "Network uptime",
+      "partners": "Trusted partners"
+    },
+    "services": {
+      "eyebrow": "What we do",
+      "title": "End-to-end network & infrastructure solutions",
+      "subtitle": "From design to installation and long-term support — built on premium materials and industry standards.",
+      "items": {
+        "fiber": {
+          "title": "Fiber Optic & FTTH",
+          "desc": "Backbone, distribution and last-mile deployments for residential, commercial and ISP networks."
+        },
+        "telecom": {
+          "title": "Telecommunication Solutions",
+          "desc": "Site survey, integration and turnkey delivery for telecom operators and enterprises."
+        },
+        "supply": {
+          "title": "Cables, Accessories & Equipment",
+          "desc": "Industry-standard fiber products, splice equipment, and active gear sourced and supplied to spec."
+        },
+        "trade": {
+          "title": "Import / Export & Consulting",
+          "desc": "Trade facilitation, sourcing and infrastructure consulting across the Indonesian market."
+        }
+      }
+    },
+    "why": {
+      "eyebrow": "Why choose us",
+      "title": "Quality you can build a network on.",
+      "items": {
+        "premium": {
+          "title": "Premium materials",
+          "desc": "Compliant fiber products and accessories — never a compromise on the physical layer."
+        },
+        "team": {
+          "title": "Experienced engineers",
+          "desc": "Field-proven technicians delivering on professional standards and on-time execution."
+        },
+        "support": {
+          "title": "Responsive support",
+          "desc": "Clear communication, proactive technical support and reliable after-sales service."
+        },
+        "scale": {
+          "title": "Built to scale",
+          "desc": "From a single building to nationwide rollouts, we plan capacity that grows with you."
+        }
+      }
+    },
+    "products": {
+      "eyebrow": "Products",
+      "title": "Premium-grade fiber and network products",
+      "subtitle": "Browse our catalogue of cables, connectivity, splice and active equipment.",
+      "viewAll": "View all products"
+    },
+    "cta": {
+      "title": "Ready to build your network?",
+      "subtitle": "Tell us about your project — our engineering team will reply within one business day.",
+      "primary": "Talk to us",
+      "secondary": "View capabilities"
+    }
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Indonesia's trusted partner in fiber and connectivity.",
+    "lead": "PT International Information Technology is a company established in 2023, engaged in Fiber Optic, FTTH and Telecommunication Solutions.",
+    "body1": "We are here to meet the growing demand for network infrastructure in the digital era — serving residential areas, office buildings, industrial sectors, and internet service providers.",
+    "body2": "As a network solution provider, we are committed to delivering reliable, high-quality services. By prioritising premium materials and the support of an experienced technical team, we handle every project with professional standards and on-time execution. We also offer a wide range of fiber optic products and accessories that comply with industry standards.",
+    "body3": "Our main strength lies in the quality of our work and our responsive customer service. We believe client satisfaction is the foundation of our growth — which is why we always prioritise clear communication, effective solutions, proactive technical support and reliable after-sales service.",
+    "vision": {
+      "title": "Our vision",
+      "text": "To become one of the leading companies in fiber optic and telecommunication infrastructure in Indonesia — delivering fast, stable and efficient connectivity."
+    },
+    "mission": {
+      "title": "Our mission",
+      "items": [
+        "Deliver reliable, compliant fiber and telecom infrastructure.",
+        "Empower clients with responsive, transparent technical support.",
+        "Bridge international trade and local execution in Indonesia."
+      ]
+    },
+    "values": {
+      "title": "What we stand for",
+      "items": {
+        "quality": {
+          "title": "Quality first",
+          "desc": "Premium materials, professional execution, measurable outcomes."
+        },
+        "trust": {
+          "title": "Long-term trust",
+          "desc": "After-sales service that treats every client as a long-term partner."
+        },
+        "innovation": {
+          "title": "Continuous innovation",
+          "desc": "Adapting to new technology and market needs in a fast-moving industry."
+        }
+      }
+    }
+  },
+  "products": {
+    "eyebrow": "Products",
+    "title": "Fiber, connectivity and network equipment",
+    "subtitle": "Every product is selected for compliance with industry standards and field reliability.",
+    "categories": {
+      "cable": "Fiber Cables",
+      "ftth": "FTTH Equipment",
+      "splice": "Splice & Tools",
+      "active": "Active Equipment",
+      "accessory": "Accessories"
+    },
+    "viewDetails": "View details",
+    "inquire": "Inquire",
+    "comingSoon": "Catalogue coming soon — contact us for a tailored quote."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's plan your next deployment.",
+    "subtitle": "Send us a message and our engineers will respond within one business day.",
+    "info": {
+      "office": "Office",
+      "officeAddress": "Jakarta, Indonesia",
+      "email": "Email",
+      "emailValue": "contact@iit.co.id",
+      "phone": "Phone",
+      "phoneValue": "+62 21 0000 0000",
+      "hours": "Hours",
+      "hoursValue": "Mon – Fri · 09:00 – 18:00 WIB"
+    },
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone (optional)",
+      "company": "Company (optional)",
+      "subject": "Subject",
+      "message": "Tell us about your project",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "success": "Thank you — your message has been received. We'll be in touch shortly.",
+      "error": "Something went wrong. Please try again or email us directly."
+    }
+  },
+  "careers": {
+    "eyebrow": "Careers",
+    "title": "Build Indonesia's connectivity with us.",
+    "subtitle": "We're hiring engineers, technicians and trade specialists who care about quality.",
+    "open": "Open positions",
+    "noOpenings": "No open positions right now — we'd still love to hear from you.",
+    "apply": "Apply",
+    "form": {
+      "title": "Apply for {position}",
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "resume": "Resume / CV link",
+      "cover": "Why are you a good fit?",
+      "submit": "Submit application",
+      "success": "Application received — thank you!",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "company": "Company",
+    "explore": "Explore",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}

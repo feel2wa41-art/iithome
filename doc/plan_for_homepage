@@ -1,0 +1,21 @@
+정리 완료했습니다.
+요청하신 **Home → About us → Product → Contact Us → Career → Admin** 하이라키 구조 그대로 홈페이지 개발 Plan을 MD 파일로 만들었습니다.
+
+다운로드: [IIT_homepage_plan.md](sandbox:/mnt/data/IIT_homepage_plan.md)
+
+구성에는 아래 내용이 포함되어 있습니다.
+
+* 전체 사이트 하이라키 구조
+* Home / About us / Product / Contact Us / Career 페이지별 기능 정의
+* 제품 분류별 이미지/설명 업로드 구조
+* 문의 신청 기능
+* 채용 지원 페이지 구조
+* 회사 위치 지도 모듈
+* 오른쪽 하단 Admin 접속 구조
+* 관리자 콘텐츠 수정 기능
+* DB 테이블 설계 초안
+* API 구조 초안
+* 개발 우선순위 Phase 정리
+* 최종 Sitemap 구조
+* 인도네시아/영어 국제화 i18n 적용필요. 관리자도 필요.
+about us PT International Information Technology is a company established in 2023, engaged in the fields of Fiber Optic, FTTH (Fiber to The Home), and Telecommunication Solutions. We are here to meet the growing demand for network infrastructure in the digital era—serving residential areas, office buildings, industrial sectors, and internet service providers.​As a network solution provider, we are committed to delivering reliable, high-quality services. By prioritizing the use of premium materials and the support of an experienced technical team, we handle every project with professional standards and on-time execution. We also offer a wide range of fiber optic products and accessories that comply with industry standards.​Our main strength lies in the quality of our work and our responsive customer service. We believe that client satisfaction is the foundation of our business growth, which is why we always prioritize clear communication, effective solutions, and proactive technical support. We also provide responsive and reliable after-sales service, as a form of our commitment to long-term customer satisfaction and comfort.​With a vision to become one of the leading companies in the provision of fiber optic and telecommunication infrastructure in Indonesia, PT International Information Technology continues to innovate and adapt to technological developments and market needs. We are ready to be your trusted partner in delivering fast, stable, and efficient connectivity.
