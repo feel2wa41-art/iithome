@@ -37,7 +37,7 @@ export function ProductsPreview() {
           </LinkButton>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {PRODUCT_CATEGORIES.map((cat, i) => {
             const Icon = ICONS[cat.key];
             return (
@@ -50,19 +50,23 @@ export function ProductsPreview() {
               >
                 <Link
                   href="/products"
-                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_20px_60px_-20px_rgba(25,98,245,0.25)]"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_20px_60px_-20px_rgba(25,98,245,0.25)]"
                 >
-                  <Icon className="h-7 w-7 text-brand-600" />
-                  <div className="mt-12">
+                  {/* Image slot — auto-loads /products/{slug}.jpg if present,
+                      otherwise shows the gradient + icon background */}
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-brand-50 to-accent-400/10">
+                    <CategoryImage slug={cat.slug} alt={tCat(cat.key)} />
+                    <Icon className="absolute right-4 top-4 h-7 w-7 text-brand-600/70 transition group-hover:scale-110 group-hover:text-brand-600" />
+                  </div>
+                  <div className="flex flex-1 flex-col justify-between p-5">
                     <p className="text-base font-semibold text-ink-900">
                       {tCat(cat.key)}
                     </p>
-                    <div className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-slate-500 transition-colors group-hover:text-brand-600">
+                    <div className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-slate-500 transition-colors group-hover:text-brand-600">
                       <span>View</span>
                       <ArrowUpRight className="h-3.5 w-3.5" />
                     </div>
                   </div>
-                  <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-gradient-to-br from-brand-100 to-accent-400/20 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
                 </Link>
               </motion.div>
             );
@@ -70,5 +74,26 @@ export function ProductsPreview() {
         </div>
       </div>
     </Section>
+  );
+}
+
+/**
+ * Renders <img> for /products/{slug}.jpg. The natural `onError` swap to a
+ * transparent pixel means missing files don't break the layout — the gradient
+ * background still shows through.
+ */
+function CategoryImage({ slug, alt }: { slug: string; alt: string }) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={`/products/${slug}.jpg`}
+      alt={alt}
+      loading="lazy"
+      className="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-500 [&.loaded]:opacity-100"
+      onLoad={(e) => e.currentTarget.classList.add('loaded')}
+      onError={(e) => {
+        e.currentTarget.style.display = 'none';
+      }}
+    />
   );
 }

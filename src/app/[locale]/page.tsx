@@ -4,6 +4,7 @@ import { Stats } from '@/components/home/Stats';
 import { Services } from '@/components/home/Services';
 import { ProductsPreview } from '@/components/home/ProductsPreview';
 import { WhyUs } from '@/components/home/WhyUs';
+import { OurClients } from '@/components/home/OurClients';
 import { CTA } from '@/components/home/CTA';
 
 export default async function HomePage({
@@ -21,6 +22,7 @@ export default async function HomePage({
       <Services />
       <ProductsPreview />
       <WhyUs />
+      <OurClients />
       <CTA />
     </>
   );

@@ -86,6 +86,11 @@
       "subtitle": "Browse our catalogue of cables, connectivity, splice and active equipment.",
       "viewAll": "View all products"
     },
+    "clients": {
+      "eyebrow": "Our clients",
+      "title": "Trusted across Indonesia",
+      "subtitle": "Operators, enterprises and ISPs who rely on us for their connectivity."
+    },
     "cta": {
       "title": "Ready to build your network?",
       "subtitle": "Tell us about your project — our engineering team will reply within one business day.",
