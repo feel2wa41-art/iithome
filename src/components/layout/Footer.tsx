@@ -1,11 +1,13 @@
 import { Link } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Logo } from './Logo';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { SITE } from '@/lib/constants';
+import { getSiteSettings } from '@/lib/site-settings';
 
-export function Footer() {
-  const t = useTranslations();
+export async function Footer() {
+  const t = await getTranslations();
+  const settings = await getSiteSettings();
   const year = new Date().getFullYear();
 
   return (
@@ -21,20 +23,20 @@ export function Footer() {
             <ul className="mt-6 space-y-3 text-sm text-slate-600">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 text-brand-600" />
-                <span>{SITE.address}</span>
+                <span>{settings.contactAddress}</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 text-brand-600" />
                 <a
-                  href={`mailto:${SITE.email}`}
+                  href={`mailto:${settings.contactEmail}`}
                   className="hover:text-ink-900"
                 >
-                  {SITE.email}
+                  {settings.contactEmail}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 text-brand-600" />
-                <span>{SITE.phone}</span>
+                <span>{settings.contactPhone}</span>
               </li>
             </ul>
           </div>

@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Eyebrow } from '@/components/ui/Badge';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { Mail, MapPin, Phone, Clock } from 'lucide-react';
+import { getSiteSettings } from '@/lib/site-settings';
 
 export default async function ContactPage({
   params,
@@ -11,12 +12,17 @@ export default async function ContactPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('contact');
+  const settings = await getSiteSettings();
 
   const info = [
-    { icon: MapPin, key: 'office', value: 'officeAddress' },
-    { icon: Mail, key: 'email', value: 'emailValue' },
-    { icon: Phone, key: 'phone', value: 'phoneValue' },
-    { icon: Clock, key: 'hours', value: 'hoursValue' },
+    { icon: MapPin, labelKey: 'office', value: settings.contactAddress },
+    { icon: Mail, labelKey: 'email', value: settings.contactEmail },
+    { icon: Phone, labelKey: 'phone', value: settings.contactPhone },
+    {
+      icon: Clock,
+      labelKey: 'hours',
+      value: locale === 'id' ? settings.contactHoursId : settings.contactHoursEn,
+    },
   ] as const;
 
   return (
@@ -36,7 +42,7 @@ export default async function ContactPage({
               const Icon = row.icon;
               return (
                 <div
-                  key={row.key}
+                  key={row.labelKey}
                   className="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white p-5"
                 >
                   <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100">
@@ -44,10 +50,10 @@ export default async function ContactPage({
                   </span>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                      {t(`info.${row.key}`)}
+                      {t(`info.${row.labelKey}`)}
                     </p>
-                    <p className="mt-1 text-sm font-medium text-ink-900">
-                      {t(`info.${row.value}`)}
+                    <p className="mt-1 text-sm font-medium text-ink-900 whitespace-pre-line">
+                      {row.value}
                     </p>
                   </div>
                 </div>

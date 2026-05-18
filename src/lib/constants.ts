@@ -2,9 +2,12 @@ export const SITE = {
   name: 'PT International Information Technology',
   short: 'IIT',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-  email: 'contact@iit.co.id',
-  phone: '+62 21 0000 0000',
-  address: 'Jakarta, Indonesia',
+  email: 'Rian@iitjkt.id',
+  phone: '+62 852-8322-5892',
+  address:
+    'Jl. Amil No.26C, RT.2/RW.5, Kalibata, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12740',
+  hoursEn: 'Mon – Fri · 8:00 am – 5:00 pm',
+  hoursId: 'Sen – Jum · 08:00 – 17:00 WIB',
   founded: 2023,
 };
 
