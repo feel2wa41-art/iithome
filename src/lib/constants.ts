@@ -14,8 +14,12 @@ export const SITE = {
 /**
  * Custom logo file. Set to a path under /public to override the built-in
  * SVG fiber mark. Leave as null to fall back to the default mark.
+ *
+ * The "_clean" version has been chroma-keyed (white background removed)
+ * by scripts/process-logo.mjs so it looks good on dark sections too.
+ * Re-run `npm run logo` after replacing logo_iit.png to regenerate.
  */
-export const BRAND_LOGO_SRC: string | null = '/logo/logo_iit.png';
+export const BRAND_LOGO_SRC: string | null = '/logo/logo_iit_clean.png';
 
 export const NAV_LINKS = [
   { href: '/', key: 'home' as const },

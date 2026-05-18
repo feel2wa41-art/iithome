@@ -1,6 +1,6 @@
 import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
-import { SITE } from '@/lib/constants';
+import { BRAND_LOGO_SRC, SITE } from '@/lib/constants';
 
 export function Logo({
   className,
@@ -9,10 +9,16 @@ export function Logo({
 }: {
   className?: string;
   variant?: 'dark' | 'light';
-  /** Optional logo image override. When null/undefined, the built-in SVG mark is used. */
+  /**
+   * Optional logo image override. When `undefined`, falls back to
+   * `BRAND_LOGO_SRC` in constants. When explicitly `null`, the
+   * built-in SVG fiber mark is used.
+   */
   src?: string | null;
 }) {
-  if (src) {
+  const finalSrc = src === undefined ? BRAND_LOGO_SRC : src;
+
+  if (finalSrc) {
     return (
       <Link
         href="/"
@@ -21,9 +27,9 @@ export function Logo({
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={src}
+          src={finalSrc}
           alt={SITE.name}
-          className="h-10 w-auto sm:h-11"
+          className="h-10 w-auto sm:h-12"
         />
       </Link>
     );
